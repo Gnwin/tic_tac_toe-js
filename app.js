@@ -15,35 +15,48 @@ let clicked = false;
 let val = 0;
 let num;
 
-for (let i = 0; i < squares.length; i++) {
-	squares[i].innerHTML = "";
-	squares[i].addEventListener("click", function(){
-    clicked = !clicked;
-    if (clicked) {
-      play('x', this);
-    } else {
-      play('o', this);
-    }
-	})
-}
-
 // for (let i = 0; i < squares.length; i++) {
-//   squares[i].innerHTML = "";
+// 	squares[i].innerHTML = "";
 // 	squares[i].addEventListener("click", function(){
-//     val++;
 //     clicked = !clicked;
-//     let res = play('x', this);
-//     if(res === 'x'){
-//       return;
+//     if (clicked) {
+//       play('x', this);
+//     } else {
+//       play('o', this);
 //     }
-//     let res1 = autoMode('o');
-//     if (res1 === 'o'){
-//       return;
+//     if (val === 9){
+//       xScore++;
+//       oScore++;
+//       x.innerHTML = xScore;
+//       o.innerHTML = oScore;
 //     }
 // 	})
 // }
 
+for (let i = 0; i < squares.length; i++) {
+  squares[i].innerHTML = "";
+	squares[i].addEventListener("click", function(){
+    let res = play('x', this);
+    if (res === 'x'){
+      return;
+    }
+    if (val === 9){
+      xScore++;
+      oScore++;
+      x.innerHTML = xScore;
+      o.innerHTML = oScore;
+      return;
+    }
+    let res1 = autoMode('o');
+    if (res1 === 'o'){
+      return;
+    }
+	})
+}
+
 function play(character, that){
+  val++;
+  console.log(val);
   that.innerHTML = character;
   that.style.pointerEvents = 'none';
   that.style.readOnly = true;
@@ -69,10 +82,6 @@ function autoMode(char){
     }
   }
   num = emptySquares[Math.floor(Math.random() * emptySquares.length)];
-  val++;
-  if (val == 10){
-    return;
-  }
   let res2 = play(char, squares[num]);
   if (res2 === char) {
     return char;
@@ -90,10 +99,10 @@ function checkMatch(letter){
       squares[wins[1]].style.color = "white";
       squares[wins[2]].style.background = "blue";
       squares[wins[2]].style.color = "white";
+      break;
     }
   }
 }
-
 
 function reset(){
 	for (let i = 0; i < squares.length; i++){
@@ -113,3 +122,5 @@ function end(){
     squares[i].readOnly = true;
 	}
 }
+
+// function draw(){}
