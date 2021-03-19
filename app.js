@@ -19,16 +19,9 @@ let num;
 // 	squares[i].innerHTML = "";
 // 	squares[i].addEventListener("click", function(){
 //     clicked = !clicked;
-//     if (clicked) {
-//       play('x', this);
-//     } else {
-//       play('o', this);
-//     }
-//     if (val === 9){
-//       xScore++;
-//       oScore++;
-//       x.innerHTML = xScore;
-//       o.innerHTML = oScore;
+//     clicked ? play('x', this) : play('o', this);
+//     if (val === squares.length){
+//       tie();
 //     }
 // 	})
 // }
@@ -40,11 +33,8 @@ for (let i = 0; i < squares.length; i++) {
     if (res === 'x'){
       return;
     }
-    if (val === 9){
-      xScore++;
-      oScore++;
-      x.innerHTML = xScore;
-      o.innerHTML = oScore;
+    if (val === squares.length){
+      tie();
       return;
     }
     let res1 = autoMode('o');
@@ -56,7 +46,6 @@ for (let i = 0; i < squares.length; i++) {
 
 function play(character, that){
   val++;
-  console.log(val);
   that.innerHTML = character;
   that.style.pointerEvents = 'none';
   that.style.readOnly = true;
@@ -123,4 +112,9 @@ function end(){
 	}
 }
 
-// function draw(){}
+function tie(){
+  xScore++;
+  oScore++;
+  x.innerHTML = xScore;
+  o.innerHTML = oScore;
+}
