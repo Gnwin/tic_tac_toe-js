@@ -79,66 +79,6 @@ function autoMode(char){
   }
 }
 
-// function checkMatch(letter){
-//   if (squares[0].innerHTML === letter && squares[1].innerHTML === letter && squares[2].innerHTML === letter) {
-//     squares[0].style.background = "blue";
-//     squares[0].style.color = "white";
-//     squares[1].style.background = "blue";
-//     squares[1].style.color = "white";
-//     squares[2].style.background = "blue";
-//     squares[2].style.color = "white";
-//   } else if (squares[3].innerHTML === letter && squares[4].innerHTML === letter && squares[5].innerHTML === letter) {
-//     squares[3].style.background = "blue";
-//     squares[3].style.color = "white";
-//     squares[4].style.background = "blue";
-//     squares[4].style.color = "white";
-//     squares[5].style.background = "blue";
-//     squares[5].style.color = "white";
-//   } else if (squares[6].innerHTML === letter && squares[7].innerHTML === letter && squares[8].innerHTML === letter) {
-//     squares[6].style.background = "blue";
-//     squares[6].style.color = "white";
-//     squares[7].style.background = "blue";
-//     squares[7].style.color = "white";
-//     squares[8].style.background = "blue";
-//     squares[8].style.color = "white";
-//   } else if (squares[0].innerHTML === letter && squares[3].innerHTML === letter && squares[6].innerHTML === letter) {
-//     squares[0].style.background = "blue";
-//     squares[0].style.color = "white";
-//     squares[3].style.background = "blue";
-//     squares[3].style.color = "white";
-//     squares[6].style.background = "blue";
-//     squares[6].style.color = "white";
-//   } else if (squares[1].innerHTML === letter && squares[4].innerHTML === letter && squares[7].innerHTML === letter) {
-//     squares[1].style.background = "blue";
-//     squares[1].style.color = "white";
-//     squares[4].style.background = "blue";
-//     squares[4].style.color = "white";
-//     squares[7].style.background = "blue";
-//     squares[7].style.color = "white";
-//   } else if (squares[2].innerHTML === letter && squares[5].innerHTML === letter && squares[8].innerHTML === letter) {
-//     squares[2].style.background = "blue";
-//     squares[2].style.color = "white";
-//     squares[5].style.background = "blue";
-//     squares[5].style.color = "white";
-//     squares[8].style.background = "blue";
-//     squares[8].style.color = "white";
-//   } else if (squares[0].innerHTML === letter && squares[4].innerHTML === letter && squares[8].innerHTML === letter) {
-//     squares[0].style.background = "blue";
-//     squares[0].style.color = "white";
-//     squares[4].style.background = "blue";
-//     squares[4].style.color = "white";
-//     squares[8].style.background = "blue";
-//     squares[8].style.color = "white";
-//   } else if (squares[2].innerHTML === letter && squares[4].innerHTML === letter && squares[6].innerHTML === letter) {
-//     squares[2].style.background = "blue";
-//     squares[2].style.color = "white";
-//     squares[4].style.background = "blue";
-//     squares[4].style.color = "white";
-//     squares[6].style.background = "blue";
-//     squares[6].style.color = "white";
-//   }
-// }
-
 function checkMatch(letter){
   let win = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
   for (let i = 0; i < win.length; i++) {
